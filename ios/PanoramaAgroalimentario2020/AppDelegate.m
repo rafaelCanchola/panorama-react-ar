@@ -30,7 +30,6 @@ static void InitializeFlipper(UIApplication *application) {
   [client start];
 }
 #endif
-
 @interface AppDelegate () <RCTBridgeDelegate>
 
 @property (nonatomic, strong) UMModuleRegistryAdapter *moduleRegistryAdapter;
@@ -40,10 +39,23 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+static NSString *const ObjetoSelectorKey = @"objetoSelector";
+
 - (void) goToNativeView:(NSString *)ARProducto {
   NSLog(@"RN binding - Native View - MyViewController.swift - Load From 'main' storyboard:: %@",ARProducto);
-  UIViewController *vc = [UIStoryboard storyboardWithName:@"Main" bundle:nil].instantiateInitialViewController;
   
+  //Writing into plist the object
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentsDirectory = [paths firstObject];
+  NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ARSelector.plist"];
+  NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:@"XInitializerItem" forKey:@"DoNotEverChangeMe"];
+      // saving values
+  [dict setObject:[NSString stringWithString:ARProducto] forKey:ObjetoSelectorKey];
+  [dict writeToFile:path atomically:YES];
+  NSDictionary *resultDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+      NSLog(@"Saved ARSelector.plist file in Documents Directory is --> %@", [resultDictionary description]);
+  //initialize storyboard
+  UIViewController *vc = [UIStoryboard storyboardWithName:@"Main" bundle:nil].instantiateInitialViewController;
   dispatch_async(dispatch_get_main_queue(), ^{
           [self.window.rootViewController presentViewController:vc animated:true completion:NULL];
         });

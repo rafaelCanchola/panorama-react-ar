@@ -16,8 +16,15 @@ class ARObjView: UIViewController, ARSCNViewDelegate {
   
   var productoObj:String = "ship"
   
-  func addProduct(){
-    
+  func getPlist(withName name: String) -> [String]?
+  {
+    //leer el archivo plist--- en Proceso
+    let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+    let path = documentsPath?.appendingPathComponent("ARSelector.plist")
+    let nsDictionary = NSDictionary(contentsOfFile: path?.absoluteString)
+    print("NSDICT")
+    print(nsDictionary)
+    return nil
   }
   
   override func viewDidLoad() {
@@ -31,6 +38,10 @@ class ARObjView: UIViewController, ARSCNViewDelegate {
       
       // Create a new scene
     var scene:SCNScene;
+    
+    let fruits = getPlist(withName: "ARSelector")
+    print(fruits) // Output: ["Orange", "Pineapple", "Raspberry", ···]
+    
     
     switch productoObj {
     case "huevo":
