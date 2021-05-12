@@ -1,16 +1,26 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, NativeModules } from "react-native";
 import {useNavigation} from "@react-navigation/native";
+const AR = NativeModules.ARObjModule;
 
 function BotonInfografias(props) {
 
     const navigation = useNavigation();
-    return (
-        <TouchableOpacity style={[styles.container, props.style]}
-                          onPress={() => navigation.navigate('Infografia')}>
-            <Text style={styles.infografias}>INFOGRAFÍAS</Text>
-        </TouchableOpacity>
-    );
+    if(props.name === "ARVIEW"){
+        return (
+            <TouchableOpacity style={[styles.container, props.style]}
+                              onPress={() => {AR.changeToNativeView("agave"); }}>
+                <Text style={styles.infografias}>PRODUCTOS AR</Text>
+            </TouchableOpacity>
+        );
+    }else {
+        return (
+            <TouchableOpacity style={[styles.container, props.style]}
+                              onPress={() => navigation.navigate('Infografia')}>
+                <Text style={styles.infografias}>INFOGRAFÍAS</Text>
+            </TouchableOpacity>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

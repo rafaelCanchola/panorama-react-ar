@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Panorama201.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<true/>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>7E8C34B85F215DBC8F5E8E6F4AA58CFA12FC94AF</string>
+				<key>dateExpires</key>
+				<string>10/05/22</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>R35A35EED6.com.Siap.Panorama201</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>R35A35EED6</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Panorama201.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>c42ee944-4db0-4d51-87c0-e0ef7acc82e8</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.Siap.Panorama201</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>R35A35EED6</string>
+				<key>name</key>
+				<string>Servicio de Informacion Agroalimentaria y Pesquera</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

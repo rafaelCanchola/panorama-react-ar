@@ -28,13 +28,14 @@ export default class Principal extends Component<any, any> {
         <Fragment key={()=>this.state.llave}>
             <View style={{flex:1}} >
                 <View style={{flex:1}}/>
-                <Image source={require('../assets/images/panoramatitleB.png')} resizeMode="cover" style={{width:screenWidth,height:screenContainer-180}}/>
+                <Image source={require('../assets/images/panoramatitleB.png')} resizeMode="contain" style={{width:screenWidth,height:screenContainer-180}}/>
                 <TouchableOpacity onPress={()=>this.setState({menuPrincipalSelector: !this.state.menuPrincipalSelector,llave:this.state.llave + 1})}>
                     <Text style={[styles.intro,{color:"#643241"}]}>Datos de un campo que avanza sin dejar a nadie atrás.</Text>
                 </TouchableOpacity>
                 <View style={{width:screenWidth-30}}>
                     <BotonProducto style={styles.botonProducto}/>
                     <BotonInfografias style={styles.botonProducto}/>
+                    <BotonInfografias style={styles.botonProducto} name={"ARVIEW"}/>
                 </View>
                 <View style={{flex:1}}/>
                 <Image source={require('../assets/images/header.png')} resizeMode="cover" style={{width:screenWidth,height:60}}/>
