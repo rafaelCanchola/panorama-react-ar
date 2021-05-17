@@ -23,7 +23,6 @@
 RCT_EXPORT_MODULE(ARObjModule);
 RCT_EXTERN_METHOD(navigateTo);
 RCT_EXPORT_METHOD(changeToNativeView:(NSString *)Producto) {
-  printf("CARGANDO VISTA...........\n");
   dispatch_async(dispatch_get_main_queue(), ^{
   AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate goToNativeView:Producto];

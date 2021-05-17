@@ -16,15 +16,13 @@ class ARObjView: UIViewController, ARSCNViewDelegate {
   
   var productoObj:String = "ship"
   
-  func getPlist(withName name: String) -> [String]?
+  func getPlist(withName name: String) -> String
   {
-    //leer el archivo plist--- en Proceso
+    //leer el archivo plist
     let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-    let path = documentsPath?.appendingPathComponent("ARSelector.plist")
-    let nsDictionary = NSDictionary(contentsOfFile: path?.absoluteString)
-    print("NSDICT")
-    print(nsDictionary)
-    return nil
+    let path = documentsPath!.appendingPathComponent(name)
+    let nsDictionary = NSDictionary(contentsOfFile: path.path)!
+    return nsDictionary .object(forKey: "objetoSelector") as! String
   }
   
   override func viewDidLoad() {
@@ -35,21 +33,34 @@ class ARObjView: UIViewController, ARSCNViewDelegate {
       
       // Show statistics such as fps and timing information
       sceneView.showsStatistics = false
-      
+    
       // Create a new scene
     var scene:SCNScene;
-    
-    let fruits = getPlist(withName: "ARSelector")
-    print(fruits) // Output: ["Orange", "Pineapple", "Raspberry", ···]
-    
-    
-    switch productoObj {
-    case "huevo":
-      scene = SCNScene(named: "art.scnassets/egg.scn")!
-    case "piña":
-      scene = SCNScene(named: "art.scnassets/piña.scn")!
+    switch getPlist(withName: "ARSelector.plist") {
+    case "Aguacate"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/aguacate.scn")!
+    case "Huevo para plato"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/egg.scn")!
+    case "Limón"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/limon.scn")!
+    case "Manzana"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/manzana.scn")!
+    case "Melón"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/melon.scn")!
+    case "Mojarra"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/mojarra.scn")!
+    case "Naranja"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/naranja.scn")!
+    case "Pera"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/pera.scn")!
+    case "Piña"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/piña.scn")!
+    case "Plátano"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/platano.scn")!
+    case "Carne en canal de ovino"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/vaca.scn")!
     default:
-      scene = SCNScene(named: "art.scnassets/ship.scn")!
+      scene = SCNScene(named: "art.scnassets/scenes/ship.scn")!
     }
       
       // Set the scene to the view
