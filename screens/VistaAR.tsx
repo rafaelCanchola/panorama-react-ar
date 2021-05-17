@@ -40,6 +40,8 @@ class VistaAR extends Component<any, any>{
 
         const arProdArray = [
             produc[1],
+            produc[11],
+            produc[15],
             produc[65],
             produc[32],
             produc[36],

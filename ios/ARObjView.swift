@@ -39,6 +39,10 @@ class ARObjView: UIViewController, ARSCNViewDelegate {
     switch getPlist(withName: "ARSelector.plist") {
     case "Aguacate"://checked
       scene = SCNScene(named: "art.scnassets/scenes/aguacate.scn")!
+    case "Brócoli"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/brocoli.scn")!
+    case "Caña de azúcar"://checked
+      scene = SCNScene(named: "art.scnassets/scenes/caña.scn")!
     case "Huevo para plato"://checked
       scene = SCNScene(named: "art.scnassets/scenes/egg.scn")!
     case "Limón"://checked

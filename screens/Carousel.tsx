@@ -104,7 +104,7 @@ class Carousel extends Component<any, any>{
                 <View style={{margin:screenHeight/40}}/>
                 <FlatList data={pagesArray} renderItem={renderSectores} keyExtractor={item => item.id} />
 
-                <Modal position={'bottom'} isOpen={this.state.isOpen} onClosed={() => this.setState({isOpen: false})} style={{justifyContent: 'center',
+                <Modal position={'bottom'} isOpen={this.state.isOpen} onClosed={() => this.setState({isOpen: false, currentIndex: 0,})} style={{justifyContent: 'center',
                     alignItems: 'center',height:screenHeight/1.5}} backdropPressToClose={false} swipeToClose={true} >
                     {renderItem()}
                 </Modal>

@@ -52,6 +52,7 @@ export default class Principal extends Component<any, any> {
                 </TouchableOpacity>
                 <BotonProducto style={styles.botonOldProducto}></BotonProducto>
                 <BotonInfografias style={[styles.botonOldProducto,{backgroundColor: "rgba(0,96,142,1)",}]}/>
+                <BotonInfografias style={[styles.botonOldProducto,{backgroundColor: "rgba(0,96,142,1)",}]} name={"Catalogo"}/>
                 <View style={{flex:1}}/>
             </View>
         </Fragment>
