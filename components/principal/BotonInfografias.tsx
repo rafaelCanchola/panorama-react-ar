@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text, NativeModules } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import {useNavigation} from "@react-navigation/native";
-const AR = NativeModules.ARObjModule;
 
 function BotonInfografias(props) {
 
     const navigation = useNavigation();
-    if(props.name === "ARVIEW"){
+    if(props.name === "Catalogo"){
         return (
             <TouchableOpacity style={[styles.container, props.style]}
-                              onPress={() => {AR.changeToNativeView("agave"); }}>
+                              onPress={() => {navigation.navigate('VistaAR')}}>
                 <Text style={styles.infografias}>PRODUCTOS AR</Text>
             </TouchableOpacity>
         );

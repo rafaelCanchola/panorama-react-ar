@@ -35,7 +35,7 @@ export default class Principal extends Component<any, any> {
                 <View style={{width:screenWidth-30}}>
                     <BotonProducto style={styles.botonProducto}/>
                     <BotonInfografias style={styles.botonProducto}/>
-                    <BotonInfografias style={styles.botonProducto} name={"ARVIEW"}/>
+                    <BotonInfografias style={styles.botonProducto} name={"Catalogo"}/>
                 </View>
                 <View style={{flex:1}}/>
                 <Image source={require('../assets/images/header.png')} resizeMode="cover" style={{width:screenWidth,height:60}}/>

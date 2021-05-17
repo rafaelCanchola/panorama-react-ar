@@ -108,7 +108,7 @@ class Carousel extends Component<any, any>{
                     alignItems: 'center',height:screenHeight/1.5}} backdropPressToClose={false} swipeToClose={true} >
                     {renderItem()}
                 </Modal>
-                </View>
+            </View>
         );
     }
 }

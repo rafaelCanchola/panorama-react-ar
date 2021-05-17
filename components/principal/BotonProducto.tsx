@@ -8,7 +8,7 @@ function BotonProducto(props) {
         <TouchableOpacity style={[styles.container, props.style]}
                           onPress={() => navigation.navigate('Carousel')}>
             <Text style={styles.infografias}>
-                {props.infografias || "BUSQUEDA POR PRODUCTO"}
+                {props.infografias || "BUSQUEDA POR SECTOR"}
             </Text>
         </TouchableOpacity>
     );
